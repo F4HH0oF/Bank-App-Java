@@ -77,7 +77,7 @@ public class Menu {
     }
 
     private void createAccount() {
-        String firstName, lastName, EGN, accountType = "";
+        String firstName, lastName, egn, accountType = "";
         double initialDeposit = 0;
         boolean valid = false;
 
@@ -95,8 +95,8 @@ public class Menu {
         firstName = keyboard.nextLine();
         System.out.print("Please enter your last name: ");
         lastName = keyboard.nextLine();
-        System.out.print("Please enter your EGN: ");
-        EGN = keyboard.nextLine();
+        System.out.print("Please enter your egn: ");
+        egn = keyboard.nextLine();
 
         valid = false;
         while (!valid) {
@@ -128,6 +128,9 @@ public class Menu {
         } else{
             account = new Savings(initialDeposit);
         }
+
+        Customer customer = new Customer(firstName, lastName, egn, account);
+        bank.addCustomer(customer);
     }
 
     private void makeDeposit() {
