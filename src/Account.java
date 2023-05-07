@@ -33,25 +33,25 @@ public class Account {
             System.out.println("You have insufficient funds!");
             return;
         }
-        checkInterest();
+        checkInterest(0);
         balance -= amount + 5;
         System.out.println("You have withdrawn $" + amount + " and incurred a fee of $5");
         System.out.println("You now have a balance of $" + balance);
     }
     public void deposit(double amount){
-        if(amount < 0){
+        if(amount <= 0){
             System.out.println("You cannot deposit negative money!");
             return;
         }
-        checkInterest();
+        checkInterest(amount);
         amount += amount * interest;
         balance += amount;
         System.out.println("You have deposited $" + amount + " with an interest rate of " + (interest*100) + "%");
         System.out.println("You now have a balance of $" + balance);
     }
 
-    public void checkInterest(){
-        if(balance > 1000){
+    public void checkInterest(double amount){
+        if(balance + amount > 1000){
             interest = 0.05;
         }else{
             interest = 0.02;

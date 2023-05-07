@@ -4,7 +4,7 @@ public class Checking extends Account {
     Checking(double initialDeposit) {
         super();
         this.setBalance(initialDeposit);
-        checkInterest();
+        checkInterest(0);
     }
 
     @Override

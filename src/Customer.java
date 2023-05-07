@@ -13,10 +13,19 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "\nCustomer information\n" +
-                "First Name: " + firstName +
-                "Last Name: " + lastName +
-                "egn: " + egn +
+        return "First Name: " + firstName + "\n" +
+                "Last Name: " + lastName + "\n" +
+                "egn: " + egn + "\n" +
                 account;
+    }
+
+    public String basicInfo() {
+        return "First Name: " + firstName +
+                " Last Name: " + lastName +
+                " egn: " + egn + " Account Number: " + account.getAccountNumber();
+    }
+
+    Account getAccount(){
+        return account;
     }
 }

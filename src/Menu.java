@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -123,9 +124,9 @@ public class Menu {
         }
         //An account can be created now
         Account account;
-        if(accountType.equalsIgnoreCase("checking")){
+        if (accountType.equalsIgnoreCase("checking")) {
             account = new Checking(initialDeposit);
-        } else{
+        } else {
             account = new Savings(initialDeposit);
         }
 
@@ -134,13 +135,63 @@ public class Menu {
     }
 
     private void makeDeposit() {
+        int account = selectAccount();
+        if (account >= 0) {
+            System.out.print("How much would you like to deposit?: ");
+            double amount = 0;
+            try {
+                amount = Double.parseDouble(keyboard.nextLine());
+            } catch (NumberFormatException e) {
+                amount = 0;
+            }
+            bank.getCustomer(account).getAccount().deposit(amount);
+        }
     }
 
+
     private void makeWithdrawal() {
+        int account = selectAccount();
+        if (account >= 0) {
+            System.out.print("How much would you like to withdrawal?: ");
+            double amount = 0;
+            try {
+                amount = Double.parseDouble(keyboard.nextLine());
+            } catch (NumberFormatException e) {
+                amount = 0;
+            }
+            bank.getCustomer(account).getAccount().withdrawal(amount);
+        }
     }
 
     private void listBalances() {
+        int account = selectAccount();
+        if (account >= 0) {
+            System.out.println(bank.getCustomer(account).getAccount());
+        }
     }
 
 
+    private int selectAccount() {
+        ArrayList<Customer> customers = bank.getCustomers();
+        if(customers.size() <= 0){
+            System.out.println("No customers at your bank!");
+            return -1;
+        }
+        System.out.println("Select an account: ");
+        for (int i = 0; i < customers.size(); i++) {
+            System.out.println((i + 1) + ") " + customers.get(i).basicInfo());
+        }
+        int account = 0;
+        System.out.print("Please enter your selection: ");
+        try {
+            account = Integer.parseInt(keyboard.nextLine()) - 1; // -1 because we want to print it from 1 and we do i+1
+        } catch (NumberFormatException e) {
+            account = -1;
+        }
+        if(account < 0 || account > customers.size()){
+            System.out.println("Invalid account selected!");
+            account = -1;
+        }
+        return account;
+    }
 }

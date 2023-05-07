@@ -5,4 +5,12 @@ public class Bank {
     public void addCustomer(Customer customer) {
         customers.add(customer);
     }
+
+    Customer getCustomer(int account) {
+        return customers.get(account);
+    }
+
+    ArrayList<Customer> getCustomers(){
+        return customers;
+    }
 }
