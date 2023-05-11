@@ -1,60 +1,92 @@
-public class Account {
+import java.io.Serializable;
+
+
+public abstract class Account  implements Serializable{
     private double balance = 0;
     private double interest = 0.02;
     private int accountNumber;
-    private static int numberOfAccounts = 100000;
+    private static int numberOfAccounts = 1000000;
+    private double transactionFee;
 
     Account(){
-        accountNumber = numberOfAccounts++;
+        accountNumber = getNextAccountNumber();
     }
 
+    public static int getNextAccountNumber(){
+        return ++numberOfAccounts;
+    }
+
+    public abstract String getAccountType();
+    /**
+     * @return the balance
+     */
     public double getBalance() {
         return balance;
     }
 
+    /**
+     * @param balance the balance to set
+     */
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
+    /**
+     * @return the interest
+     */
     public double getInterest() {
-        return interest * 100;
+        return interest;
     }
 
+    /**
+     * @param interest the interest to set
+     */
     public void setInterest(double interest) {
         this.interest = interest;
     }
 
+    /**
+     * @return the accountNumber
+     */
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void withdrawal(double amount){
-        if(amount + 5 > balance){
-            System.out.println("You have insufficient funds!");
-            return;
+    public void withdraw(double amount) throws InsufficientFundsException{
+        if(amount + transactionFee > balance){
+            throw new InsufficientFundsException();
         }
+        balance -= amount + transactionFee;
         checkInterest(0);
-        balance -= amount + 5;
-        System.out.println("You have withdrawn $" + amount + " and incurred a fee of $5");
-        System.out.println("You now have a balance of $" + balance);
     }
-    public void deposit(double amount){
+
+    public void deposit(double amount) throws InvalidAmountException{
         if(amount <= 0){
-            System.out.println("You cannot deposit negative money!");
-            return;
+            throw new InvalidAmountException();
         }
         checkInterest(amount);
-        amount += amount * interest;
+        amount = amount + amount * interest;
         balance += amount;
-        System.out.println("You have deposited $" + amount + " with an interest rate of " + (interest*100) + "%");
-        System.out.println("You now have a balance of $" + balance);
     }
 
     public void checkInterest(double amount){
-        if(balance + amount > 1000){
+        if(balance + amount > 10000){
             interest = 0.05;
-        }else{
+        } else {
             interest = 0.02;
         }
     }
+
+    public double getTransactionFee() {
+        return transactionFee;
+    }
+
+    public void setTransactionFee(double fee){
+        this.transactionFee = fee;
+    }
+
+    void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
 }
