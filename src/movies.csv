@@ -1,0 +1,23 @@
+record_id,name,year,duration,genre,rating
+1,The Shawshank Redemption,1994,142,Drama,9.3
+2,The Godfather,1972,175,Crime,9.2
+3,The Dark Knight,2008,152,Action,9.0
+4,Schindler's List,1993,195,Drama,9.0
+5,The Lord of the Rings: The Return of the King,2003,201,Drama,9.0
+6,12 Angry Men,1957,96,Crime,9.0
+7,The Godfather Part II,1974,202,Crime,9.0
+8,Pulp Fiction,1994,154,Crime,8.9
+9,Inception,2010,148,Action,8.8
+10,Lord of the Rings: The Fellowship of the Ring,2001,178,Drama,8.8
+11,Fight Club,1999,139,Drama,8.8
+12,Forrest Gump,1994,142,Romance,8.8
+13,The Lord of the Rings: The Two Towers,2002,179,Drama,8.8
+14,The Good the Bad and the Ugly,1966,148,Western,8.8
+15,GoodFellas,1990,145,Crime,8.7
+16,The Matrix,1999,136,Sci-Fi,8.7
+17,Star Wars: Episode V - The Empire Strikes Back,1980,124,Action,8.7
+18,One Flew Over the Cuckoo's Nest,1975,133,Drama,8.7
+19,Interstellar,2014,169,Sci-Fi,8.6
+20,Star Wars: Episode IV - A New Hope,1977,121,Action,8.6
+21,The Green Mile,1999,189,Drama,8.6
+22,Se7en,1995,127,Crime,8.6

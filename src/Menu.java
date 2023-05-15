@@ -9,7 +9,7 @@ public class Menu {
     Bank bank = new Bank();
     boolean exit = false;
 
-    public static void main(String[] args) {
+    public static void menuBanka() {
         Menu menu = new Menu();
         menu.runMenu();
     }
@@ -143,7 +143,7 @@ public class Menu {
         return initialDeposit;
     }
 
-    private void createAccount() throws InvalidAccountTypeException {
+    void createAccount() throws InvalidAccountTypeException {
         //Get account information
         String accountType = askQuestion("Please enter an account type: ", Arrays.asList("checking", "savings"));
         String firstName = askQuestion("Please enter your first name: ", null);
