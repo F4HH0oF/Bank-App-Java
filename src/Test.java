@@ -129,58 +129,59 @@ public class Test {
             System.out.println( "Check the parameters again!");
         godina = input.nextInt();
         }
+        final int konstGodina = godina;
         switch(metod*3 + (sortirane+2)*4){
             case 15:
                 bonko.stream()
-                .filter(x -> x.getYear()<=godina)
+                .filter(x -> x.getYear()<=konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getYear))
                 .forEach(System.out::println);
                break;
             case 19: 
                 bonko.stream()
-                .filter(x -> x.getYear()<=godina)
+                .filter(x -> x.getYear()<=konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getDuration))
                 .forEach(System.out::println);
                 break;
             case 23:
                 bonko.stream()
-                .filter(x -> x.getYear()<=godina)
+                .filter(x -> x.getYear()<=konstGodina)
                 .sorted(Comparator.comparingDouble(Katalog::getRating))
                 .forEach(System.out::println);
                 break;
             case 18: 
                 bonko.stream()
-                .filter(x -> x.getYear()>=godina)
+                .filter(x -> x.getYear()>=konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getYear))
                 .forEach(System.out::println);
                 break;
             case 22:
                 bonko.stream()
-                .filter(x -> x.getYear()>=godina)
+                .filter(x -> x.getYear()>=konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getDuration))
                 .forEach(System.out::println);
                 break;
             case 26:
                 bonko.stream()
-                .filter(x -> x.getYear()>=godina)
+                .filter(x -> x.getYear()>=konstGodina)
                 .sorted(Comparator.comparingDouble(Katalog::getRating))
                 .forEach(System.out::println);
                 break;
             case 21:
                 bonko.stream()
-                .filter(x -> x.getYear()==godina)
+                .filter(x -> x.getYear()==konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getYear))
                 .forEach(System.out::println);
                 break;
             case 25:
                 bonko.stream()
-                .filter(x -> x.getYear()==godina)
+                .filter(x -> x.getYear()==konstGodina)
                 .sorted(Comparator.comparingInt(Katalog::getDuration))
                 .forEach(System.out::println);
                 break;
             case 29:
                 bonko.stream()
-                .filter(x -> x.getYear()==godina)
+                .filter(x -> x.getYear()==konstGodina)
                 .sorted(Comparator.comparingDouble(Katalog::getRating))
                 .forEach(System.out::println);
                 break;
