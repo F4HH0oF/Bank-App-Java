@@ -35,14 +35,14 @@ public class AppMenu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(99, 115, 125));
         jPanel1.setForeground(new java.awt.Color(0, 102, 255));
 
-//        Banka.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-//        Banka.setText("Банка");
-//        Banka.setBorder(null);
-//        Banka.addActionListener(new java.awt.event.ActionListener() {
-//            public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                BankaActionPerformed(evt);
-//            }
-//        });
+        Banka.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Banka.setText("Банка");
+        Banka.setBorder(null);
+        Banka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BankaActionPerformed(evt);
+            }
+        });
 
         Movies.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Movies.setText("Каталог филми");
@@ -102,10 +102,10 @@ public class AppMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//    private void BankaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankaActionPerformed
-//        this.dispose();
-//        Menu.menuBanka();
-//    }//GEN-LAST:event_BankaActionPerformed
+    private void BankaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BankaActionPerformed
+        this.dispose();
+        BankApp.runBankApp();
+    }//GEN-LAST:event_BankaActionPerformed
 
     private void MoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoviesActionPerformed
         this.dispose();
