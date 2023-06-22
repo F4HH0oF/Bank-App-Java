@@ -1,11 +1,9 @@
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-
 
 public class Bank implements Serializable{
-    private ArrayList<Customer> customers = new ArrayList<Customer>();
+    private MyArrayList<Customer> customers = new MyArrayList<Customer>();
 
     void addCustomer(Customer customer) {
         if(accountExists(customer.getAccount().getAccountNumber())){
@@ -35,7 +33,7 @@ public class Bank implements Serializable{
         return customers.get(account);
     }
 
-    ArrayList<Customer> getCustomers(){
+    MyArrayList<Customer> getCustomers(){
         return customers;
     }
 
