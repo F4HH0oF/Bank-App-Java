@@ -3,13 +3,13 @@ import java.io.Serializable;
 public class Customer  implements Serializable{
     private final String firstName;
     private final String lastName;
-    private final String ssn;
+    private final String egn;
     private final Account account;
 
-    Customer(String firstName, String lastName, String ssn, Account account) {
+    Customer(String firstName, String lastName, String egn, Account account) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.ssn = ssn;
+        this.egn = egn;
         this.account = account;
     }
 
@@ -18,7 +18,7 @@ public class Customer  implements Serializable{
         return "\nCustomer Information\n" +
                 "First Name: " + getFirstName() + "\n" +
                 "Last Name: " + getLastName() +  "\n" +
-                "SSN: " + getSsn() +  "\n" +
+                "EGN: " + getEgn() +  "\n" +
                 account;
     }
 
@@ -45,10 +45,10 @@ public class Customer  implements Serializable{
     }
 
     /**
-     * @return the ssn
+     * @return the egn
      */
-    public String getSsn() {
-        return ssn;
+    public String getEgn() {
+        return egn;
     }
 
 }

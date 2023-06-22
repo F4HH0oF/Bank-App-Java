@@ -12,7 +12,7 @@ public class AccountDetailsPage extends javax.swing.JDialog {
 
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
-        ssnField.setText(customer.getSsn());
+        egnField.setText(customer.getEgn());
         typeField.setText(customer.getAccount().getAccountType());
         accountNumberField.setText(String.valueOf(customer.getAccount().getAccountNumber()));
         balanceField.setText(String.format("$%.2f", customer.getAccount().getBalance()));
@@ -33,8 +33,8 @@ public class AccountDetailsPage extends javax.swing.JDialog {
         firstNameField = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
         lastNameField = new javax.swing.JLabel();
-        ssnLabel = new javax.swing.JLabel();
-        ssnField = new javax.swing.JLabel();
+        egnLabel = new javax.swing.JLabel();
+        egnField = new javax.swing.JLabel();
         typeLabel = new javax.swing.JLabel();
         typeField = new javax.swing.JLabel();
         accountNumberLabel = new javax.swing.JLabel();
@@ -58,9 +58,9 @@ public class AccountDetailsPage extends javax.swing.JDialog {
         getContentPane().add(lastNameLabel);
         getContentPane().add(lastNameField);
 
-        ssnLabel.setText("Social Security Number:");
-        getContentPane().add(ssnLabel);
-        getContentPane().add(ssnField);
+        egnLabel.setText("Social Security Number:");
+        getContentPane().add(egnLabel);
+        getContentPane().add(egnField);
 
         typeLabel.setText("Account Type:");
         getContentPane().add(typeLabel);
@@ -112,8 +112,8 @@ public class AccountDetailsPage extends javax.swing.JDialog {
     private javax.swing.JLabel lastNameField;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JButton okButton;
-    private javax.swing.JLabel ssnField;
-    private javax.swing.JLabel ssnLabel;
+    private javax.swing.JLabel egnField;
+    private javax.swing.JLabel egnLabel;
     private javax.swing.JLabel typeField;
     private javax.swing.JLabel typeLabel;
     // End of variables declaration//GEN-END:variables

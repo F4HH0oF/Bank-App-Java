@@ -28,8 +28,8 @@ public class AddAccountMenu extends javax.swing.JDialog {
         firstNameField = new javax.swing.JTextField();
         lastNameLabel = new javax.swing.JLabel();
         lastNameField = new javax.swing.JTextField();
-        ssnLabel = new javax.swing.JLabel();
-        ssnField = new javax.swing.JTextField();
+        egnLabel = new javax.swing.JLabel();
+        egnField = new javax.swing.JTextField();
         depositLabel = new javax.swing.JLabel();
         depositField = new javax.swing.JTextField();
         typeLabel = new javax.swing.JLabel();
@@ -49,9 +49,9 @@ public class AddAccountMenu extends javax.swing.JDialog {
         getContentPane().add(lastNameLabel);
         getContentPane().add(lastNameField);
 
-        ssnLabel.setText("Social Security Number:");
-        getContentPane().add(ssnLabel);
-        getContentPane().add(ssnField);
+        egnLabel.setText("EGN:");
+        getContentPane().add(egnLabel);
+        getContentPane().add(egnField);
 
         depositLabel.setText("Initial Deposit:");
         getContentPane().add(depositLabel);
@@ -88,7 +88,7 @@ public class AddAccountMenu extends javax.swing.JDialog {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         StringBuilder warnings = new StringBuilder();
-        String firstName = "", lastName = "", ssn = "", depositString = "";
+        String firstName = "", lastName = "", egn = "", depositString = "";
         double amount = 0;
         //Verify first name field
         if (firstNameField.getText().isEmpty()) {
@@ -102,10 +102,10 @@ public class AddAccountMenu extends javax.swing.JDialog {
         } else {
             lastName = lastNameField.getText();
         }
-        if (!ssnField.getText().matches("^\\d{10}$")) {
+        if (!egnField.getText().matches("^\\d{10}$")) {
             warnings.append("EGN must be 10 digits.\n");
         } else {
-            ssn = ssnField.getText();
+            egn = egnField.getText();
         }
         //Verify initial deposit
         if (depositField.getText().isEmpty()) {
@@ -135,7 +135,7 @@ public class AddAccountMenu extends javax.swing.JDialog {
                 }
             }
             if (account != null) {
-                customer = new Customer(firstName, lastName, ssn, account);
+                customer = new Customer(firstName, lastName, egn, account);
                 bank.addCustomer(customer);
                 this.dispose();
             } else {
@@ -155,8 +155,8 @@ public class AddAccountMenu extends javax.swing.JDialog {
     private javax.swing.JTextField lastNameField;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JButton okButton;
-    private javax.swing.JTextField ssnField;
-    private javax.swing.JLabel ssnLabel;
+    private javax.swing.JTextField egnField;
+    private javax.swing.JLabel egnLabel;
     private javax.swing.JComboBox typeField;
     private javax.swing.JLabel typeLabel;
     // End of variables declaration//GEN-END:variables
