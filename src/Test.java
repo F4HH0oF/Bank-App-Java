@@ -23,8 +23,9 @@ public class Test {
     public static void filmiList() {
         Scanner input = new Scanner(System.in);
         LinkedList<Katalog> temperatureInfos = new LinkedList(new Filmi().returnListInfoWidgets("src/movies.csv"));
-
-        System.out.print("----------------" + "\n" + "Choose a filter criteria:" + "\n" + "1. Genre" + "\n" + "2. Year of release" + "\n" + "3. No filter" + "\n" + "0. Exit" + "\n" + "I choose: ");
+        ArrayList<Integer> logIstoriq = new ArrayList<>();
+        Sortirane obekt = new Sortirane();
+        System.out.print("-----------------" + "\n" + "Choose a filter criteria:" + "\n" + "1. Genre" + "\n" + "2. Year of release" + "\n" + "3. No filter" +"\n" + "4. Razbor" + "\n" + "0. Exit" + "\n" + "I choose: ");
         try {
             int izbor = input.nextInt();
 
@@ -35,24 +36,35 @@ public class Test {
                     break;
                 case 1:
                     Test.genre(temperatureInfos);
+                    logIstoriq.add(izbor);
                     break;
 
                 case 2:
                     Test.year(temperatureInfos);
+                    logIstoriq.add(izbor);
                     break;
-
+                
                 case 3:
                     Test.noFilter(temperatureInfos);
+                    logIstoriq.add(izbor);
+                    filmiList();
+                    break;
+                case 4: 
+                    obekt.InsertionSort(logIstoriq);
+                    filmiList();
+                case 5: proba.main(null);
                     break;
                 default:
                     System.out.println("No such option..." + "\n" + "-----------------");
                     Test.filmiList();
                     break;
+                
             }
         }catch (InputMismatchException e){
             System.out.println("Input mismatch.");
             Test.filmiList();
         }
+
     }
     
     
