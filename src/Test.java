@@ -24,7 +24,7 @@ public class Test {
         Scanner input = new Scanner(System.in);
         LinkedList<Katalog> temperatureInfos = new LinkedList(new Filmi().returnListInfoWidgets("src/movies.csv"));
 
-        System.out.print("-----------------" + "\n" + "Choose a filter criteria:" + "\n" + "1. Genre" + "\n" + "2. Year of release" + "\n" + "3. No filter" + "\n" + "0. Exit" + "\n" + "I choose: ");
+        System.out.print("----------------" + "\n" + "Choose a filter criteria:" + "\n" + "1. Genre" + "\n" + "2. Year of release" + "\n" + "3. No filter" + "\n" + "0. Exit" + "\n" + "I choose: ");
         try {
             int izbor = input.nextInt();
 
