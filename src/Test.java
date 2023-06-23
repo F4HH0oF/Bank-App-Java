@@ -23,7 +23,7 @@ public class Test {
     public static void filmiList() {
         Scanner input = new Scanner(System.in);
         LinkedList<Katalog> temperatureInfos = new LinkedList(new Filmi().returnListInfoWidgets("src/movies.csv"));
-        ArrayList<Integer> logIstoriq = new ArrayList<>();
+        MyArrayList<Integer> logIstoriq = new MyArrayList<>();
         Sortirane obekt = new Sortirane();
         System.out.print("-----------------" + "\n" + "Choose a filter criteria:" + "\n" + "1. Genre" + "\n" + "2. Year of release" + "\n" + "3. No filter" +"\n" + "4. Razbor" + "\n" + "0. Exit" + "\n" + "I choose: ");
         try {

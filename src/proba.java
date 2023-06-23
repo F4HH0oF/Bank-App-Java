@@ -8,7 +8,7 @@ public class proba{
         Sortirane obekt = new Sortirane();
         System.out.print("Broi chisla: ");
         int j = input.nextInt();
-        ArrayList<Integer> ime= new ArrayList<>();
+        MyArrayList<Integer> ime= new MyArrayList<>();
         for(int i=0; i<j; i++){
             int k=i+1;
             System.out.print("Vuvedi element nomer "+ k +"-");

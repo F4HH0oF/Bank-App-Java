@@ -39,6 +39,19 @@ public class MyArrayList<T> implements Iterable<T> {
         return current.getData();
     }
 
+    public void set(int index, T data) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+
+        Node<T> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.getNext();
+        }
+
+        current.setData(data);
+    }
+
     public void remove(T element) {
         if (head == null) {
             throw new IllegalArgumentException("Element not found: " + element.toString());
@@ -110,6 +123,10 @@ public class MyArrayList<T> implements Iterable<T> {
 
         public T getData() {
             return data;
+        }
+
+        public void setData(T data) {
+            this.data = data;
         }
 
         public Node<T> getNext() {
